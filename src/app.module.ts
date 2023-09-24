@@ -7,6 +7,7 @@ import { config } from './config';
 import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { MikroOrmConfig } from './config/mikroorm.config';
 import { CommonModule } from './common/common.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { CommonModule } from './common/common.module';
       useClass: MikroOrmConfig,
     }),
     CommonModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
